@@ -1,17 +1,18 @@
 import { INCREMENT, DECREMENT } from "../constants";
 
 const initialState = {
-    counter: 0 
+    value: 0 
 }
 
-function counterReducer(state = initialState, action) {        
-    switch(action.type) {
+//function counterReducer(state = initialState, action) {
+function counterReducer(state = initialState, { type }) {        
+    switch(type) {
         case INCREMENT: {
-            state = { counter: state.counter + 1}              
+            state = { value: state.value + 1}              
             break;
         }
         case DECREMENT: {
-            state = { counter: state.counter - 1}
+            state = { value: state.value - 1}
             break;
         }
         default: {

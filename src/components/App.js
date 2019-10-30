@@ -1,29 +1,12 @@
 import React from 'react';
-import Counter from './Counter';
 import { connect } from 'react-redux';
-import { INCREMENT } from '../constants';
+import AppRouter from './AppRouter';
 
-function App(props) {  
+
+function App() {  
   return (
-    <div>
-      <Counter number={props.counter} onClickAddNumber={props.onClickAddNumber}/>
-    </div>
+    <AppRouter />
   );
 }
 
-const mapStateToProps = (state) => {    
-  return {
-    counter: state.counterReducer.counter
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onClickAddNumber: (e) => {
-      dispatch({'type': INCREMENT});
-    }
-  }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect()(App);
