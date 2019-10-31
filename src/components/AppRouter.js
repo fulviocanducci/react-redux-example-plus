@@ -1,9 +1,11 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Home from './Home';
 import Counter from './Counter';
 import Name from './Name';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import Todo from './Todo';
 
 const router = [{
     linkTo: '/',
@@ -17,6 +19,10 @@ const router = [{
     linkTo: '/name',
     component: Name,
     name: 'Name'
+}, {
+    linkTo: '/Todo',
+    component: Todo,
+    name: 'Todo'
 }]
 
 function AppRouter() {     
