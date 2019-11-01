@@ -20,7 +20,7 @@ const router = [{
     component: Name,
     name: 'Name'
 }, {
-    linkTo: '/Todo',
+    linkTo: '/todo',
     component: Todo,
     name: 'Todo'
 }]

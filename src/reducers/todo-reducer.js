@@ -9,18 +9,20 @@ const initialState = {
 export default function todoReducer(state = initialState, {type, payload}) {
     switch(type) {
         case ADD_TODO: {
-            state = { value: [...state.value, payload] };
-            break;
+            return { value: [...state.value, payload] };            
         } 
-        case CHANGE_TODO: {
-            break;
+        case CHANGE_TODO: {            
+            return { value : state.value.map((v) => {                
+                return v.id === payload.id 
+                    ? {...v, done: !v.done}
+                    : v;
+            })};            
         }
         case REMOVE_TODO: {
             break;
         }
         default: {
-            break;
+            return state;            
         }
     }
-    return state;
 }

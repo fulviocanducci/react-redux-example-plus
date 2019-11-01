@@ -13,7 +13,7 @@ function Name({value, onChangeName}) {
         <>
             <Header title="Name" />
             <div>
-                <input className="form-control" type="text" value={local} onChange={e => setLocal(e.target.value)} />
+                <input className="form-control" type="text" value={local} onChange={e => setLocal(e.target.value)}  autoFocus/>
             </div>
             <div className="mt-3">
                 <button className="btn btn-outline-primary" onClick={e => onChangeName(local)}>Change</button>
